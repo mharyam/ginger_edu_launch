@@ -13,5 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 This should send a mail for deployemnt."
-      - name: Deploy to netlify
       - run: echo "🍏 This has been deployed to netflify."
