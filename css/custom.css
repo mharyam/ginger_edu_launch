@@ -1,0 +1,72 @@
+html {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  
+  .card-deck .card {
+    min-width: 220px;
+  }
+  
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+  
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.part1 {
+    /* background-color: green; */
+}
+
+.part2 {
+        /* background-color: green; */
+}
+
+.img-responsive {
+    width: 80%;
+}
+
+.header1{
+    color: #410D4B;
+    font-family:Campton;
+    text-align:left;
+    font-size:48px;
+    letter-spacing:2;
+    font-weight: bolder;
+}
+
+.header2{
+    color: #9D83A2;
+    font-family:Campton;
+    text-align:left;
+    font-size:24px;
+    letter-spacing:2;
+}
+
+.custom-input{
+    border-radius: 10px;
+    border-width: 4px;
+    border-color: #A058AE;
+}
+
+.custom-form-text{
+    color: #410D4B;
+    font-weight: bold;
+
+
+}
+
+.submit-button{
+    background-color: #FF6584;
+    border-style: none;
+}
