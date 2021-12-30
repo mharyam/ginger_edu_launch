@@ -21,10 +21,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: false
+      # - run: false
 
   deploy:
     runs-on: ubuntu-latest
+    environment: PROD
     needs: build
     steps:
       - run: echo "🎉 This should send a mail for deployemnt."
