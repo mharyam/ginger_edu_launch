@@ -82,6 +82,16 @@ html {
     border-style: none;
 }
 
+.submit-button:hover {
+  /* // */
+  background-color: #FF6584;
+}
+
+
 #cont{
   padding-left: 2%
+}
+
+#sign-up-done{
+  display: none;
 }
