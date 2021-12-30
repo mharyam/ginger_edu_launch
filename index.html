@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
+    <script src="JS/min.js"></script>
   </head>
 
   <body>
@@ -31,19 +32,22 @@
 
     <div class="container-fluid" id="cont">
         <div class="row align-items-center">
-            <div class="col-sm part1">
-                <form method="POST" action="https://script.google.com/macros/s/AKfycbyEbKNjzXA5IoDys0hw9NfCoD6RhpPeabwOoWGF847ty-myJyikZDClaJPFtHXmsRxm/exec
-                ">
+          <div class="col-sm" id="sign-up-done">
+                <h1 class="h3 mb-3 font-weight-normal header1">Welcome !</h1>
+                <p class="mb-3 font-weight-normal header2">Thank you for signing up for our newsletter, we’re really excited to welcome you on board! Now that you’re on the list, you’ll be the first to hear about our updates.</p>
+          </div>
+            <div class="col-sm part1" id="start-sign-up">
+                <form name="submit-to-google-sheet">
                     <h1 class="h3 mb-3 font-weight-normal header1">Everything is about to change!</h1>
                     <p class="mb-3 font-weight-normal header2">Subscribe to our mailing list so you get notified<br> when we launch</p>
 
                     <div class="form-group">
                         <label for="inputName" class="custom-form-text">Name</label>
-                        <input type="name" id="inputName" class="form-control custom-input" required>
+                        <input type="name" name="name" id="inputName" class="form-control custom-input" required>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail" class="custom-form-text">Email address</label>
-                        <input type="email" id="inputEmail" class="form-control custom-input" placeholder="Email address" required>
+                        <input type="email" name="email" id="inputEmail" class="form-control custom-input" placeholder="Email address" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
@@ -56,5 +60,24 @@
             </div>
           </div>
     </div>
+    <script>
+      $( document ).ready(function() {
+              $( "#sign-up-done").hide();
+          });
+      
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbz4ARrSfn1OjDFhwg6wy0HkzfSxyrqyNgRKPZp-o6bfyhWZwBYyQeEW5dj02iZM-jel/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            console.error('Success!', response)
+            $( "#start-sign-up").hide();
+            $( "#sign-up-done").show();
+        })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
