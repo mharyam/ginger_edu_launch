@@ -9,6 +9,7 @@ name: main
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: DEV
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -25,6 +26,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    environment: PROD
     needs: build
     steps:
       - run: echo "🎉 This should send a mail for deployemnt."
